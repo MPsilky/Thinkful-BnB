@@ -1,88 +1,123 @@
+index_html_content = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parcel Delivery Form</title>
-    <link rel="stylesheet" href="https://unpkg.com/normalize.css/normalize.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Vacation Rentals & Unique Homes</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Pangolin&family=Lato&display=swap" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+    <header>
+        <div class="logo">Thinkfulbnb</div>
+        <nav>
+            <ul id="menu">
+                <li><a href="#stay">Stay</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#ideas">Ideas</a></li>
+                <li><a href="#host">Host</a></li>
+            </ul>
+        </nav>
+    </header>
     <main>
-        <section class="form-container">
-            <h1 class="visually-hidden">Shipping Information Form</h1>
-            <form aria-labelledby="shippingForm" class="shipping-form" novalidate>
+        <section id="stay">
+            <h2>Find the perfect vacation rental</h2>
+            <form>
                 <div class="form-group">
-                    <label for="name" class="form-label">Full Name:</label>
-                    <input
-                        class="form-input"
-                        id="name"
-                        type="text"
-                        name="name"
-                        placeholder="Enter your full name"
-                        aria-required="true"
-                    />
+                    <label for="location">Location</label>
+                    <input type="text" id="location" placeholder="Search destination">
                 </div>
                 <div class="form-group">
-                    <label for="location" class="form-label">Zipcode:</label>
-                    <input
-                        class="form-input"
-                        id="location"
-                        type="text"
-                        name="zipcode"
-                        maxlength="5"
-                        required
-                        aria-required="true"
-                    />
+                    <label for="arrive">Arrive</label>
+                    <input type="date" id="arrive">
                 </div>
                 <div class="form-group">
-                    <label for="form-message" class="form-label">Your message:</label>
-                    <textarea
-                        class="form-textarea"
-                        id="form-message"
-                        name="message"
-                        required
-                        maxlength="200"
-                        placeholder="How can we assist you?"
-                        aria-required="true"
-                    ></textarea>
+                    <label for="depart">Depart</label>
+                    <input type="date" id="depart">
                 </div>
                 <div class="form-group">
-                    <label for="password" class="form-label">Password:</label>
-                    <input
-                        class="form-input"
-                        id="password"
-                        type="password"
-                        name="password"
-                        minlength="8"
-                        aria-describedby="passwordHelp"
-                    />
-                    <small id="passwordHelp" class="form-text">Minimum 8 characters.</small>
+                    <label for="type">Type</label>
+                    <select id="type">
+                        <option value="">Apartment</option>
+                        <option value="">Barn</option>
+                        <option value="">Castle</option>
+                        <option value="">Houseboat</option>
+                        <option value="">Tiny House</option>
+                        <option value="">Yacht</option>
+                        <option value="">Yurt</option>
+                    </select>
                 </div>
-                <fieldset class="form-group">
-                    <legend class="form-legend">Favorite Color:</legend>
-                    <label for="red" class="form-radio">
-                        <input id="red" name="color" type="radio" value="red" />
-                        Red
-                    </label>
-                    <label for="blue" class="form-radio">
-                        <input id="blue" name="color" type="radio" value="blue" />
-                        Blue
-                    </label>
-                    <label for="white" class="form-radio">
-                        <input id="white" name="color" type="radio" value="white" />
-                        White
-                    </label>
-                </fieldset>
-                <!-- Additional fields here -->
-                <div class="form-actions">
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                    <button type="reset" class="btn btn-secondary">Reset</button>
-                </div>
+                <button type="submit" class="button-primary">Search</button>
             </form>
         </section>
+        <section id="about" class="alternate-background">
+            <h2>About</h2>
+            <div class="about-content">
+                <img src="images/vacation-rental-pool.png" alt="Thinkfulbnb - Vacation rental pool" />
+                <img src="images/vacation-rental-inside-stone.png" alt="Thinkfulbnb - Vacation rental inside stone" />
+                <p>
+                    Fusce porta odio nunc, eget pretium massa rutrum sit amet. Etiam
+                    fringilla aliquam dapibus. Maecenas quis nisi sed turpis aliquam
+                    porttitor eget ut quam. Sed vel scelerisque ex. Duis in pharetra
+                    neque, at tempus lorem. Aenean mi magna, posuere at quam sed, euismod
+                    gravida neque.
+                </p>
+            </div>
+        </section>
+        <section id="ideas">
+            <h2>Ideas</h2>
+            <div class="row">
+                <div class="idea-box">
+                    <h3>Forest retreats</h3>
+                    <img src="images/forest-retreat.png" alt="Thinkfulbnb - Forest retreat" />
+                </div>
+                <div class="idea-box">
+                    <h3>Beaches</h3>
+                    <img src="images/beach-house.png" alt="Thinkfulbnb - Beach house" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="idea-box">
+                    <h3>Rustic cabins</h3>
+                    <img src="images/cabin.png" alt="Thinkfulbnb - Cabin" />
+                </div>
+                <div class="idea-box">
+                    <h3>Pet-friendly</h3>
+                    <img src="images/pet-friendly.png" alt="Thinkfulbnb - Pet-friendly" />
+                </div>
+            </div>
+</section>
+        <section id="host" class="alternate-background">
+            <h2>Want to Become a Thinkfulbnb Host?</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+            molestie in est id efficitur. Sed hendrerit ut turpis quis dapibus.
+            Nam sit amet iaculis lectus. Aliquam erat volutpat. Praesent rhoncus
+            pellentesque eros in aliquet. Sed accumsan elit lacus, id ultrices
+            libero rutrum vitae.
+          </p>
+          <ul>
+            <li>Mauris in pellentesque ligula.</li>
+            <li>Sed accumsan elit lacus, id ultrices libero rutrum vitae.</li>
+            <li>Nunc vitae ex eget neque pellentesque porttitor.</li>
+            <li>Cras mollis lorem sagittis sapien imperdiet blandit. Vivamus.</li>
+            <li>
+              Donec vehicula ipsum nisi, eu consectetur leo feugiat et. Fusce eget
+              hendrerit mauris.
+            </li>
+          </ul>
+        </div>
+        <div>
+        <img src="images/become-a-host.png" alt="Thinkfulbnb - Become a host" />
+        </div>
+      </section>
     </main>
-</body>
+
+    <footer>
+      <p>© Thinkful</p>
+    </footer>
+  </body>
 </html>
